@@ -5,67 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat GPT Popup</title>
     <style>
-        .chat-gpt-popup {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
+.chat-gpt-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
 
-        .chat-gpt-menu {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            background: white;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            z-index: 1000;
-            display: none; /* Hidden by default */
-        }
+.chat-gpt-menu {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 1000;
+}
 
-        .chat-gpt-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            background: #f1f1f1;
-            border-bottom: 1px solid #ccc;
-        }
+.chat-gpt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+}
 
-        .chat-gpt-close {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-        }
+.chat-gpt-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
 
-        .chat-gpt-content {
-            padding: 10px;
-        }
+.chat-gpt-content {
+    padding: 10px;
+}
     </style>
 </head>
 <body>
-    <div class="chat-gpt-popup">
-        <button onclick="toggleChat()">Chat with GPT</button>
-    </div>
-    <div class="chat-gpt-menu" id="chatGptMenu">
-        <div class="chat-gpt-header">
-            <h2>Chat GPT</h2>
-            <button class="chat-gpt-close" onclick="toggleChat()">&times;</button>
+    <div class="chat-gpt-popup"></div>
+            <div class="chat-gpt-menu" style="display: none;">
+                <div class="chat-gpt-header">
+                    <h2>Chat GPT</h2>
+                    <button class="chat-gpt-close">&times;</button>
+                </div>
+                <div class="chat-gpt-content">
+                    <iframe src="./chat-gbt.html" frameborder="0" width="100%" height="400px"></iframe>
+                </iframe>
+                </div>
+            </div>
         </div>
-        <div class="chat-gpt-content">
-            <iframe src="./components/popups/chat_gpt/chat_gpt.html" frameborder="0" width="100%" height="400px"></iframe>
-        </div>
-    </div>
     <script>
-        function toggleChat() {
-            var chatMenu = document.getElementById('chatGptMenu');
-            if (chatMenu.style.display === 'none' || chatMenu.style.display === '') {
-                chatMenu.style.display = 'block';
-            } else {
-                chatMenu.style.display = 'none';
-            }
-        }
+document.querySelector('.chat-gpt-button').addEventListener('click', function() {
+    document.querySelector('.chat-gpt-menu').style.display = 'block';
+});
+
+document.querySelector('.chat-gpt-close').addEventListener('click', function() {
+    document.querySelector('.chat-gpt-menu').style.display = 'none';
+});
     </script>
 </body>
 </html>
